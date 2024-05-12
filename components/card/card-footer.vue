@@ -4,7 +4,7 @@
       <a
         class="text-center uppercase w-full min-h-[16px] text-white rounded-3xl"
         v-for="(val, index) in typeComp"
-        :class="['bug','fighting','psychic'].includes(val.type.name) ? 'default': val.type.name "
+        :class="['bug','fighting','psychic','steel','rock','ice','ghost'].includes(val.type.name) ? 'default': val.type.name "
         :key="index"
         style="cursor: pointer"
       >

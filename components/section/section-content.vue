@@ -1,10 +1,10 @@
 <template>
   <section
     :class="{ 'w-1/6': pokemons.length === 1 }"
-    class="flex flex-wrap lg:justify-center gap-10 mb-5"
+    class="flex flex-wrap lg:justify-center mx-4 lg:mx-0 gap-5 md:gap-10 lg:gap-10 mb-5"
   >
-    <Card
-      class="flex-2 py-[18px] px-[16px] w-full min-w-[152px] min-h-[190px]"
+    <LazyCard
+      class="flex-2 py-[18px] px-[10px] md:max-w-full lg:w-full min-w-[152px] lg:min-w-[152px] min-h-[190px]"
       style="cursor: pointer"
       @click.prevent="redirect(index)"
       v-for="(value, index) in pokemons"
@@ -29,7 +29,7 @@
           :type="value.extra?.types !== undefined ? value.extra?.types : []"
         ></CardFooter>
       </template>
-    </Card>
+    </LazyCard>
   </section>
 </template>
 

@@ -1,14 +1,14 @@
 <template>
   <div class="lg:container md:mx-auto lg:mx-auto">
-    <Search></Search>
+    <Search class="mb-8 mx-4 lg:mx-auto"></Search>
 
-    <div class="my-10">
+    <div class="hidden sm:flex md:flex my-10">
       <span>Pokémons</span>
     </div>
 
     <Suspense>
-      <SectionContent :pokemons="storePokemon.listPokeComputed">
-      </SectionContent>
+      <LazySectionContent :pokemons="storePokemon.listPokeComputed">
+      </LazySectionContent>
       <template #fallback>
         <p style="color: red">Carregando a lista</p>
       </template>
@@ -31,9 +31,6 @@ useInfiniteScroll(
   async () => {
     const nextPage = allPokemon.value.length;
     await storePokemon.getPokemons("", nextPage, 24)
-    // for (const iterator of allPokemon.value) {
-      
-    // }
 
   },
   {

@@ -30,12 +30,10 @@ export const usePokemonStore = defineStore("pokemon", () => {
           } else {
             allPokemon.value.push(...data.results);
 
-            for (const key in allPokemon.value) {
-              console.log(key);
-              effectors(allPokemon.value[key].url,Number(key));
-              console.log("aaaaaaaaa", effectorsPoke.value);
-              //allPokemon.value[key].extra = effectorsPoke.value;
-            }
+            const arrayNew: IPokemon[] = Array.from(data.results);
+
+            effectors(arrayNew);
+            //allPokemon.value[key].extra = effectorsPoke.value;
           }
           // soma para proxima request nao dar erro
           totalExtra.value = data.count;
@@ -68,11 +66,15 @@ export const usePokemonStore = defineStore("pokemon", () => {
     return data;
   };
 
-  const effectors = async (url: string,index:number) => {
-    const data: any = await $fetch(url);
-    console.log(data)
-    effectorsPoke.value = data;
-    allPokemon.value[index].extra = data
+  const effectors = async (newData: any) => {
+    const newEffector: Array<any> = newData;
+    for (const key in newEffector) {
+      const data: any = await $fetch(newEffector[key].url);
+      newEffector[key].extra = data;
+    }
+    console.log(newEffector);
+    allPokemon.value.length === 24? allPokemon.value = newEffector: allPokemon.value.push(...newEffector)
+    //allPokemon.value.push(...data.results)
   };
 
   const effectorsComput = computed(() => {

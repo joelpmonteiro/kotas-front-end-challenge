@@ -12,8 +12,8 @@
     </header>
 
     <div>
-      <span>
-        <b>{{ name }}</b>
+      <span class="mulish-bold text-sm">
+        {{ name }}
       </span>
     </div>
   </div>

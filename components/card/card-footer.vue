@@ -1,8 +1,8 @@
 <template>
   <footer class="w-full">
-    <div class="flex gap-2">
+    <div class="flex gap-2 justify-center">
       <a
-        class="text-center uppercase w-full min-h-[16px] text-white rounded-3xl"
+        class="mulish-600 content-center text-font-w p-1 w-[64px] leading-font-w text-center uppercase min-h-[16px] text-white rounded-3xl"
         v-for="(val, index) in typeComp"
         :class="['bug','fighting','psychic','steel','rock','ice','ghost'].includes(val.type.name) ? 'default': val.type.name "
         :key="index"

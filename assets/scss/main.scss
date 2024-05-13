@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
+
 * {
   position: relative;
   margin: 0;
@@ -65,4 +67,35 @@ body {
     text-decoration: underline;
     color: #00A3FF;
   }
+}
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 1000
+
+.mulish-bold  {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.mulish-600  {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.mulish-400  {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quicksand-bold {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }

@@ -8,8 +8,15 @@ export default {
       },
       maxHeight:{
         'c': 'calc(95dvh - 3rem)' 
-      }
-    },
+      },
+      fontSize:{
+        'font-w': '.65rem', 
+      },
+      lineHeight:{
+        'font-w': '120%', 
+      },
+      
+   },
   },
   plugins: [],
 }

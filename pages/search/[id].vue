@@ -5,7 +5,7 @@ import { NuxtLink } from '../../.nuxt/components';
 
     <SectionDescription :pokemonSelect="pokeSelect"></SectionDescription>
     <div class="text-center">
-      <NuxtLink href="/" class="font-semibold text-link-a"
+      <NuxtLink href="/" class="mulish-bold text-sm text-link-a"
         >Voltar</NuxtLink
       >
     </div>

@@ -1,18 +1,18 @@
 <template>
   <div class="mb-4" v-if="!route.path.includes('/search')">
-    <b>Cód: {{ content }}</b>
+    <span class="text-xs quicksand-bold">Cód: {{ content }}</span>
   </div>
 
   <div class="w-full" v-else>
     <div class="text-center mb-3">
-      <strong class="">{{ descrip }}</strong>
+      <span class="mulish-bold text-sm">{{ descrip }}</span>
     </div>
 
     <ul
       class="flex flex-col gap-0 divide-y divide-slate-200 dark:divide-slate-700 list-none"
     >
-      <li class="border-top p-2" v-for="(value,index) in abilities" :key="index" >
-        {{ value.effect }}
+      <li class="border-top p-2 text-color-grey-01" v-for="(value,index) in abilities" :key="index" >
+        <div class="mulish-400 text-sm "> {{ value.effect }}</div>
       </li>
 
     </ul>
@@ -38,5 +38,7 @@ const abilities = computed(()=>{
 </script>
 
 <style scoped lang="scss">
-
+.text-color-grey-01{
+  color: rgba(97, 97, 97, 1);
+}
 </style>

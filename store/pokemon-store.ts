@@ -25,9 +25,12 @@ export const usePokemonStore = defineStore("pokemon", () => {
     $fetch(`${api}/pokemon${firstUrl}?offset=${offset}&limit=${limit}`).then(
       (data: any) => {
         if (firstUrl === "") {
-          if (allPokemon.value.length === 1) {
+          if (allPokemon.value.length === 1 && firstUrl !== '') {
             allPokemon.value = data.results;
           } else {
+            if (allPokemon.value.length === 1) {
+              allPokemon.value = [];
+            }
             allPokemon.value.push(...data.results);
 
             const arrayNew: IPokemon[] = Array.from(data.results);
@@ -55,9 +58,10 @@ export const usePokemonStore = defineStore("pokemon", () => {
 
   const pokemonDetailsById = (id: number) => {
     if (listPokeComputed.value.length === 0) {
-      allPokemon.value = JSON.parse(localStorage.getItem("pokemon") as any);
+      allPokemon.value = [JSON.parse(localStorage.getItem("pokemon") as any)];
       //allPokemon.value =
     }
+    
     return allPokemon.value.find((v) => v.extra.id === id);
   };
 
@@ -68,12 +72,24 @@ export const usePokemonStore = defineStore("pokemon", () => {
 
   const effectors = async (newData: any) => {
     const newEffector: Array<any> = newData;
+    console.log('entrou aqui')
     for (const key in newEffector) {
       const data: any = await $fetch(newEffector[key].url);
       newEffector[key].extra = data;
     }
     console.log(newEffector);
-    allPokemon.value.length === 24? allPokemon.value = newEffector: allPokemon.value.push(...newEffector)
+    allPokemon.value.length === 24 ?
+      allPokemon.value = newEffector :
+      allPokemon.value.push(...newEffector)
+
+    // setTimeout(()=>{
+    //   localStorage.setItem(
+    //     "pokemon",
+    //     JSON.stringify(allPokemon.value)
+    //   );
+    // },500)
+
+    //allPokemon.value.length === 24 ? allPokemon.value = newEffector: 
     //allPokemon.value.push(...data.results)
   };
 

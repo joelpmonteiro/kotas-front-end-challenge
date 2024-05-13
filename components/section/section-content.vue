@@ -1,33 +1,19 @@
 <template>
-  <section
-    :class="{ 'w-1/6': pokemons.length === 1 }"
-    class="flex flex-wrap lg:justify-center mx-4 lg:mx-0 gap-5 md:gap-10 lg:gap-10 mb-5"
-  >
-    <LazyCard
-      class="flex-2 py-[18px] px-[10px] md:max-w-full lg:w-full min-w-[152px] lg:min-w-[152px] min-h-[190px]"
-      style="cursor: pointer"
-      @click.prevent="redirect(index)"
-      v-for="(value, index) in pokemons"
-      :key="index"
-    >
+  <section :class="{ 'w-1/6': pokemons.length === 1 }"
+    class="flex flex-wrap lg:justify-center mx-4 lg:mx-0 gap-5 md:gap-10 lg:gap-10 mb-5">
+    <LazyCard class="flex-2 py-[18px] px-[10px] md:max-w-full lg:w-full min-w-[152px] lg:min-w-[152px] min-h-[190px]"
+      style="cursor: pointer" @click.prevent="redirect(index)" v-for="(value, index) in pokemons" :key="index">
       <template v-slot:title>
         <!--value.extra?.sprites?.other['official-artwork'].front_default-->
-        <CardTitle
-          :name="value.name"
-          :img="value.extra?.sprites.other['official-artwork'].front_default"
-        ></CardTitle>
+        <CardTitle :name="value.name" :img="value.extra?.sprites.other['official-artwork'].front_default"></CardTitle>
       </template>
 
       <template v-slot:content>
-        <CardBody
-          :content="value.extra?.id !== undefined ? value.extra?.id : 0"
-        ></CardBody>
+        <CardBody :content="value.extra?.id !== undefined ? value.extra?.id : 0"></CardBody>
       </template>
 
       <template v-slot:footer>
-        <CardFooter
-          :type="value.extra?.types !== undefined ? value.extra?.types : []"
-        ></CardFooter>
+        <CardFooter :type="value.extra?.types !== undefined ? value.extra?.types : []"></CardFooter>
       </template>
     </LazyCard>
   </section>
@@ -55,10 +41,18 @@ const poke = computed(() => {
 
 const redirect = (index: number) => {
   const { id } = pokemons.value[index].extra;
-  console.log(id);
-  router.push({
-    path: `search/${id}`,
-  });
+
+  localStorage.setItem(
+    "pokemon",
+    JSON.stringify(pokemons.value[index])
+  );
+
+  setTimeout(() => {
+    router.push({
+      path: `search/${id}`,
+    });
+  }, 300)
+
 };
 
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div class="lg:container md:mx-auto lg:mx-auto">
-    <Search class="mb-8 mx-4 lg:mx-auto"></Search>
+    <Search class="mb-8 mx-4 lg:mx-auto sm:mx-2 md:mx-2"></Search>
 
-    <div class="hidden sm:flex md:flex my-10">
+    <div class="hidden sm:flex md:flex my-10 sm:mx-4 md:mx-4">
       <span class="mulish-bold text-sm">Pokémons</span>
     </div>
 

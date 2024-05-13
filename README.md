@@ -1,24 +1,22 @@
-#
+## kotas Front End Challenge - By [Coodesh](https://coodesh.com/)
 
-## Readme do Repositório
 
-- Deve conter o título do projeto
-- Uma descrição sobre o projeto em frase
-- Deve conter uma lista com linguagem, framework e/ou tecnologias usadas
-- Como instalar e usar o projeto (instruções)
-- Não esqueça o [.gitignore](https://www.toptal.com/developers/gitignore)
-- Se está usando github pessoal, referencie que é um challenge by coodesh:  
+- O projeto visa listar os pokemons detalhando o tipo dele e visa também ter um scroll infinito para facilitar no carregamento dos demais pokemons, o projeto conta com uma pesquisa por pokemons por (Id e Nome), e consequentemente detalhes do pokemon em uma pagina separada chamada ``/search/:id``
 
->  This is a challenge by [Coodesh](https://coodesh.com/)
+```
+- Javascript
+- TypeScript
+- Nuxt 3 / Vue 3
+- vue router
+- tailwindcss
+- SASS
+- @vueuse/nuxt (Para scroll infinito)
+- Node.js
+```
 
-# Nuxt 3 Minimal Starter
+## Como Usar 
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install the dependencies:
-
+* Para utilizar o projeto basta usar o comando
 ```bash
 # npm
 npm install
@@ -33,62 +31,15 @@ yarn install
 bun install
 ```
 
-## Development Server
+* E voce vai acessar a url ``http://localhost:3000``
+* Com isso vai entrar na pagina inicial do projeto e para buscar um unico pokemon e so escrever o nome dele no campo de busca encima e usar normalmente.
 
-Start the development server on `http://localhost:3000`:
+>  This is a challenge by [Coodesh](https://coodesh.com/)
 
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
+``
 1 - Tela de listagem Pokémons, sendo 24 registros por página com paginação em Scroll (Infinita). -> ✅ 
-2 - Pesquisa de um Pokémon específico por ID ou Nome. 
+2 - Pesquisa de um Pokémon específico por ID ou Nome. -> ✅ 
 3 - Exibir o detalhe de um Pokémon ao clicar em um card, mostrando os seus efeitos. Exibir o detalhe de um Pokémon ao clicar em um card, mostrando os seus efeitos. (Deve ser redirecionado para um página nova, sendo possível também pesquisar um pokémon específico via parâmetro na url) -> ✅
-4 - Responsividade para visualização em dispositivos Móveis. 
+4 - Responsividade para visualização em dispositivos Móveis. -> ✅ 
 5 - Aplicação de Clean Code no projeto. Não é necessário listar todos os dados, somente alguns básicos. -> ✅
+``
